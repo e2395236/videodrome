@@ -1,6 +1,38 @@
-import Accueil from '../Accueil/Accueil';
 import Entete from '../Entete/Entete';
-import ListeFilms from '../ListeFilms/ListeFilms';
-import TuileFilm from '../TuileFilms/TuileFilm';
-import './App.css';
+import './404.css';
 
+
+function NotFound() {
+
+ 
+ 
+
+ 
+  
+    return (
+      <main>
+      <Entete />
+     
+  
+      
+      <div>
+  
+     
+       
+  
+     
+   
+  
+  
+  
+  
+  
+   
+    
+    </div>
+  
+    </main>
+    );
+  }
+  
+  export default NotFound;

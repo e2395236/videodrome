@@ -6,9 +6,10 @@ function TuileFilm(props) {
     
     <div  >
     <article>
+    
     <h2>{props.data.titre}</h2>
     <h3>{props.data.realisateur}</h3>
-    <img src={props.data.image} alt={props.data.titre}/>
+    <img src={`img/${props.data.titreVignette}`} alt={props.data.titre}/>
     <p>{props.data.annee}</p>
     <p>{props.data.duree} minutes</p>
 

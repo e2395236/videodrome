@@ -1,12 +1,28 @@
-import { NavLink } from 'react-router-dom';
+
 import './Film.css';
+
+import Entete from '../Entete/Entete';
+import TuileFilm from '../TuileFilms/TuileFilm';
+
+
 
 
 function Film() {
     return (
+ 
+
       
       <div>
-        <h1>titre</h1>
+        <Entete />
+
+     
+
+
+
+
+    
+        
+    
       
       </div>
     );

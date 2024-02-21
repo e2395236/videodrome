@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  list-style: none;
+  text-decoration: none;
+
+}
