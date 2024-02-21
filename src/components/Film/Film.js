@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import './Films.css';
+import './Film.css';
 
 
-function Films() {
+function Film() {
     return (
       
       <div>
@@ -12,4 +12,4 @@ function Films() {
     );
   }
   
-  export default Films ;
+  export default Film ;

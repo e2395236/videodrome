@@ -4,7 +4,7 @@ import './TuileFilm.css';
 function TuileFilm(props) {
   return (
     
-    <div>
+    <div  >
     <article>
     <h2>{props.data.titre}</h2>
     <h3>{props.data.realisateur}</h3>
