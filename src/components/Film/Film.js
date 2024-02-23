@@ -15,6 +15,8 @@ function Film() {
       <div>
         <Entete />
 
+        <TuileFilm />
+
      
 
 

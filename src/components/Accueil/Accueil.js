@@ -23,25 +23,16 @@ function Accueil() {
   
   return (
     <main>
+
     <Entete />
    
-
-    
+  
     <div>
 
       <p>{data}</p>
      
-
-   
- 
-
-
-
-
-
- 
   
-  </div>
+    </div>
 
   </main>
   );
