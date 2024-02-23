@@ -1,82 +1,24 @@
-import './Filtres.css';
 import { useEffect, useState } from 'react';
 
+function Filtres(props) {
+  const [filtreActif, setFiltreActif] = useState("");
 
+  const changerFiltre = (nouveauFiltre, cleFiltre) => {
+      props.setUrlFiltre(nouveauFiltre);
+      setFiltreActif(cleFiltre);
+  };
 
+    return (
+        <ul>
+            <li className={filtreActif === "anneeAsc" ? "active" : ""} onClick={() => changerFiltre('data/annee-asc.json', 'anneeAsc')}> <button>Années - croissante (Année - Année)</button></li>
+            <li className={filtreActif === "anneeDesc" ? "active" : ""} onClick={() => changerFiltre('data/annee-desc.json', 'anneeDesc')}> <button>Années - décroissante (Année - Année)</button></li>
+            <li className={filtreActif === "realAsc" ? "active" : ""} onClick={() => changerFiltre('data/realisation-asc.json', 'realAsc')}> <button>Réalisateurs - alphabétique (A - Z)</button></li>
+            <li className={filtreActif === "realDesc" ? "active" : ""} onClick={() => changerFiltre('data/realisation-desc.json', 'realDesc')}> <button>Réalisateurs - alphabétique inverse (Z - A)</button></li>
+            <li className={filtreActif === "titreAsc" ? "active" : ""} onClick={() => changerFiltre('data/titre-asc.json', 'titreAsc')}> <button>Titre - croissant (A - Z)</button></li>
+            <li className={filtreActif === "titreDesc" ? "active" : ""} onClick={() => changerFiltre('data/titre-desc.json', 'titreDesc')}> <button>Titre - décroissant (Z - A)</button></li>
+            
+        </ul>
+    );
+}
 
-
-function Filtres(e) {
-
-    const urlListeFilms = "data/titre-desc.json";
-    const [urlFiltre, setUrlFiltre] = useState (urlListeFilms) ;
-
-
-   
-  
-    
-      function anneeAsc(e) {
-        setUrlFiltre ('data/anne-asc.json') 
-       console.log ('clic sur le bouton anneeAsc');
-
-
-
-
-
-      }
-    
-    
-      function anneeDesc() {
-      
-        setUrlFiltre ('data/anne-desc.json');
-       
-      }
-    
-      function realisateurAsc(e) {
-      
-        setUrlFiltre('data/realisation-asc.json');
-      }
-
-
-      function realisateurDesc() {
-          setUrlFiltre ('data/realisateur-desc.json');
-      }
-
-    
-
-      function filtreActif () {
-        //faire la gestion du filtre actif
-        // Gérer le filtre actif en mettant en surbrillance visuelle l'option sélectionnée
-        // Ajouter une classe CSS pour indiquer visuellement l'option active
-        // Mettre en évidence l'option sélectionnée avec un style différent
-        // Par exemple, changer la couleur de fond ou la couleur du texte
-        // Implémenter la logique pour activer le filtre sélectionné
-        // Mettre en place un mécanisme pour désactiver les autres filtres
-        // Utiliser des classes CSS pour rendre le filtre actif distinct des autres
-    
-    
-      }
-
-    
-    
-    
-
-
-
-
-
-  return (
-      
-
-  <ul>
-    <li onClick={(e) => {anneeAsc(e); filtreActif() }}> <button>Années - croissante (Année - Année)</button></li> 
-    <li onClick={(e) => {anneeDesc(e) }}> <button>Années - croissante inverse (Année - Année)</button></li>
-  <li onClick={(e) => {realisateurAsc(e); filtreActif() }}> <button>Realisateurs - alphabetique (A - Z)</button></li> 
-  <li onClick={(e) => {realisateurDesc(e) }}> <button>Realisateurs - alphabetique inverse (Z - A)</button></li>
-
-</ul>
-
-  )
-
-  }
-
-    export default Filtres;
+export default Filtres;
