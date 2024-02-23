@@ -1,0 +1,51 @@
+:root {
+    /* Espacements */
+    --espace-xs: 4px; /* Très petit */
+    --espace-sm: 8px; /* Petit */
+    --espace-md: 16px; /* Moyen */
+    --espace-lg: 32px; /* Grand */
+    --espace-xl: 64px; /* Très grand */
+
+    /* Marges */
+    --marge-xs: var(--espace-xs);
+    --marge-sm: var(--espace-sm);
+    --marge-md: var(--espace-md);
+    --marge-lg: var(--espace-lg);
+    --marge-xl: var(--espace-xl);
+
+    /* Paddings */
+    --padding-xs: var(--espace-xs);
+    --padding-sm: var(--espace-sm);
+    --padding-md: var(--espace-md);
+    --padding-lg: var(--espace-lg);
+    --padding-xl: var(--espace-xl);
+}
+
+/* Utilisation des espacements */
+.container {
+    padding: var(--padding-md);
+}
+
+.card {
+    margin-bottom: var(--marge-lg);
+    padding: var(--padding-sm);
+}
+
+/* Espacement spécifique pour les éléments verticaux et horizontaux */
+.vertical-spacing > * + * {
+    margin-top: var(--marge-md);
+}
+
+.horizontal-spacing > * + * {
+    margin-left: var(--marge-md);
+}
+
+/* Exemple d'utilisation d'un helper class pour les marges */
+.mt-md {
+    margin-top: var(--marge-md);
+}
+.mb-md {
+    margin-bottom: var(--marge-md);
+}
+
+/* Ajoutez d'autres utilitaires d'espacement selon les besoins de votre projet */

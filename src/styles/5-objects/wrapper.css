@@ -1,0 +1,45 @@
+/* Wrapper de base pour le contenu principal */
+.wrapper {
+    max-width: 1200px; /* Largeur maximale du contenu */
+    margin: 0 auto; /* Centrage du wrapper */
+    padding: var(--espace-md); /* Utilisation d'une variable pour l'espacement */
+}
+
+/* Wrapper avec un fond clair */
+.wrapper-light {
+    background-color: #f9f9f9; /* Couleur de fond claire */
+    padding: var(--espace-lg); /* Un peu plus d'espacement */
+}
+
+/* Wrapper pour les sections sombres */
+.wrapper-dark {
+    background-color: #333; /* Couleur de fond sombre */
+    color: #fff; /* Texte en blanc pour le contraste */
+    padding: var(--espace-lg);
+}
+
+/* Wrapper pour le contenu serré, moins d'espacement */
+.wrapper-tight {
+    max-width: 800px; /* Réduction de la largeur maximale */
+    padding: var(--espace-sm); /* Moins d'espacement */
+}
+
+/* Wrapper flexible, s'adapte à différentes résolutions */
+.wrapper-flexible {
+    max-width: 90%; /* Largeur en pourcentage pour plus de flexibilité */
+    padding: var(--espace-md);
+}
+
+/* Spécifique pour l'espacement vertical entre les éléments enfants */
+.wrapper-vertical-spacing > * + * {
+    margin-top: var(--espace-md);
+}
+
+/* Utilisation de grid pour un wrapper plus complexe */
+.wrapper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--espace-md);
+}
+
+/* Ajoutez ici d'autres styles spécifiques à vos wrappers */
