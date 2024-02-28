@@ -1,33 +1,21 @@
-
-import './Film.css';
-
+import { useParams } from 'react-router-dom';
 import Entete from '../Entete/Entete';
 import TuileFilm from '../TuileFilms/TuileFilm';
 
-
-
-
 function Film() {
-    return (
- 
+  let { id } = useParams(); // Récupère l'identifiant du film depuis l'URL
 
-      
-      <div>
-        <Entete />
+  // Ici, tu peux utiliser l'identifiant pour charger les détails du film depuis ton API ou tes données
 
-        <TuileFilm />
+  return (
+    <div>
+      <Entete />
+      {/* Affiche les détails du film ici */}
+      <h1>Film ID: {id}</h1> {/* Exemple d'utilisation de l'ID */}
 
      
+    </div>
+  );
+}
 
-
-
-
-    
-        
-    
-      
-      </div>
-    );
-  }
-  
-  export default Film ;
+export default Film;
