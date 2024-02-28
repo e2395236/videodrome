@@ -2,28 +2,50 @@ import { useParams } from 'react-router-dom';
 import Entete from '../Entete/Entete';
 import './Film.css';
 import { useState, useEffect } from 'react';
+import TuileFilm from '../TuileFilms/TuileFilm';
 
 
-function Film() {
-  let { id } = useParams(); // Récupère l'identifiant du film depuis l'URL
+
+
+function Film(props) {
+  let { id } = useParams();
+
+
+
+
+ 
+  
+  // Récupère l'identifiant du film depuis l'URL
 
   // Ici, tu peux utiliser l'identifiant pour charger les détails du film depuis ton API ou tes données
 const urlFilm = "https://four1f-node-api.onrender.com/films/" + id;
 const [film, setFilm] = useState({});
 
 useEffect(() => {
-  
   fetch(urlFilm)
     .then(response => response.json())
     .then(data => {
-      
       setFilm(data);
-      console.log(data.notes);  
+    });
+}, []);
+
+
+
+
+// useEffect(() => {
+  
+//   fetch(urlFilm)
+//     .then(response => response.json())
+//     .then(data => {
+      
+//       setFilm(data);
+//       console.log(data.notes);  
+
 
     
-    })
+//     })
 
-}, []);
+// }, []);
 
 
 
@@ -69,10 +91,9 @@ useEffect(() => {
 
       }
 
+      
   
 
-  
-      
 
 
 
@@ -83,12 +104,18 @@ useEffect(() => {
      
       <h2>{film && film.titre}</h2> 
 
-            <h3>{film && film.realisateur}</h3>
-            <img src={`img/${film && film.titreVignette}`} alt={film && film.titre}/>
+            <h3>{film && film.realisation}</h3>
+            {/* <img src={`img/${film.titreVignette}`} alt={film.titre}/> */}
+
+  
+     
             <p>{film && film.annee}</p>
             <p>{film && film.duree} minutes</p>
             <p>{film && film.resume}</p>
             <p>{film && film.notes}</p>
+            <p>{film && film.description}</p>
+            <p>{film && film.genres } </p> 
+         
 
       <button onClick={soumettreNote}>Vote</button>
 

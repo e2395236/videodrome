@@ -2,3 +2,39 @@ img {
     max-width: 200px;
 
 }
+
+.grille-films {
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem; /* Met un peu d'espace entre les tuiles */
+   
+  }
+  
+  .tuile-film {
+    flex: 0 1 300px; /* Les tuiles vont avoir une base de 300px mais peuvent grandir */
+    display: flex;
+    flex-direction: column;
+    max-width: 210px;
+    align-items: center; /* Centre le contenu de la tuile */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Petite ombre pour du relief */
+    padding: 20px;
+ /* Bordures arrondies pour le style */
+    background-color: #fff; /* Un fond blanc ou une autre couleur de ton choix */
+  }
+  
+  .tuile-film img {
+    width: 100%; /* Pour que l'image prenne toute la largeur de la tuile */
+ /* Bordures arrondies pour l'image aussi */
+   ; /* Un peu d'espace entre l'image et le texte en dessous */
+  }
+  
+  .tuile-film h2 {
+    font-size: 20px; /* Taille du titre */
+    color: #333; /* Couleur du texte */
+    margin: 0 0 10px 0; /* Ajuste l'espacement autour du titre */
+  }
+  .grille-films a {
+    text-decoration: none; /* Enlève le soulignement */
+    color: inherit; /* Hérite de la couleur de texte parente */
+  }
+  

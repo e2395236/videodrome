@@ -9,8 +9,8 @@ import Filtres from '../Filtres/Filtres';
 function ListeFilms() {
 
 
- // const urlListeFilms = "https://four1f-node-api.onrender.com/films";
- const urlListeFilms = "data/titre-desc.json";
+ const urlListeFilms = "https://four1f-node-api.onrender.com/films";
+ //const urlListeFilms = "data/titre-desc.json";
  const [urlFiltre, setUrlFiltre] = useState(urlListeFilms);
  const [listeFilms, setListeFilms] = useState([]);
 
@@ -30,16 +30,17 @@ function ListeFilms() {
 
   //chaque tuile film doit etre à l'interieur d'une balise link
 
-
-  const tuileFilm = listeFilms.map((film, index) => {
+  const tuileFilm = listeFilms.map((film) => {
     return (
-      <Link key={film.id} data={index} to={`/films/${film.id}`}>
-
-
-        <TuileFilm data={film} />
-      </Link>
+      <div className="grille-films" key={film.id}>
+        <Link to={`/films/${film.id}`}>
+          <TuileFilm data={film} />
+        </Link>
+      </div>
     );
   });
+  
+  
   
 
 
@@ -48,23 +49,17 @@ function ListeFilms() {
   return (
     <main>
       <Entete />
-
-
       <Filtres urlFiltre={urlFiltre} setUrlFiltre={setUrlFiltre} />
-
-
-
+  
       <h2>Liste des films</h2>
   
       <div className="container">
-        <div className="row">
+        <div className="grille-films">
           {tuileFilm}
         </div>
       </div>
     </main>
   );
-
-
-}
+  }  
 
 export default ListeFilms;
