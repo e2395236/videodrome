@@ -10,12 +10,19 @@
     --couleur-danger: #dc3545; /* Rouge */
 
     /* Couleurs de fond */
-    --fond-principal: #ffffff; /* Blanc */
+    --fond-principal: #08007a; /* Blanc */
     --fond-secondaire: #f8f9fa; /* Gris clair */
     
     /* Couleurs de texte */
-    --texte-principal: #212529; /* Gris foncé */
+    --texte-principal: #e3e5e7; /* Gris foncé */
     --texte-secondaire: #6c757d; /* Gris */
+
+    /* Couleurs de bordure */
+
+    /* Couleurs de barres TV */
+    --bleu: #1900ff;
+    --jaune: #ffff00;
+    --vert: #00ff00;
 }
 
 /* Utilisation des variables */

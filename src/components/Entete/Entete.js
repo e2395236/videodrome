@@ -12,9 +12,9 @@ function Entete() {
       </header>
 
   
-      <NavLink to="/accueil">Accueil</NavLink> | <span></span>
+      <NavLink to="/accueil">Accueil </NavLink> 
 
-       <NavLink to="/liste-films">Liste Films</NavLink> 
+       <NavLink to="/liste-films">Films</NavLink> 
     
    
     
