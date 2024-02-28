@@ -71,7 +71,7 @@ function ListeFilms() {
     <main>
       <Entete />
 
-      <Filtres filtre={filtre} />
+      <Filtres filtre={filtre} /> 
 
 
 
