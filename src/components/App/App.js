@@ -28,8 +28,9 @@ function App() {
      //console.log("login")
 
     if (e.target.usager.value == "admin") {
-      e.target.reset()
+    
     setLogged({estLog: true, usager: e.target.usager.value});
+    e.target.reset();
 
     }
   

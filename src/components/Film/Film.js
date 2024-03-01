@@ -1,14 +1,20 @@
 import { useParams } from 'react-router-dom';
 import Entete from '../Entete/Entete';
 import './Film.css';
-import { useState, useEffect } from 'react';
+import react,  { useState, useEffect, useContext } from 'react';
 import TuileFilm from '../TuileFilms/TuileFilm';
+import { AppContext } from '../App/App';
+
+
+
 
 
 
 
 function Film(props) {
   let { id } = useParams();
+
+  const context = useContext(AppContext);
 
 
 
@@ -29,6 +35,27 @@ useEffect(() => {
     });
 }, []);
 
+
+let blocAjoutCommentaire;
+
+if (context.estLog) {
+  blocAjoutCommentaire = <div>
+    <form>
+      <input type="text" name="commentaire" id="commentaire" />
+      <button type="submit" onClick={ajouterCommentaire}>Ajouter un commentaire</button>
+    </form>
+  </div>;
+
+} else {
+  blocAjoutCommentaire = <div>
+    <p>Connectez-vous pour ajouter un commentaire</p>
+  </div>;
+
+}
+
+function ajouterCommentaire() {
+  console.log('Ajouter un commentaire');
+}
 
 
 
@@ -117,6 +144,8 @@ useEffect(() => {
          
 
       <button onClick={soumettreNote}>Vote</button>
+
+            {blocAjoutCommentaire}
 
      
     </div>

@@ -17,23 +17,30 @@ function Entete(props) {
   return (
     
     <div>
-      <header>
-       <NavLink to="/"><h1>Videodrome</h1></NavLink>
-      </header>
+      <header className='flex-row gap-md '>
+       <div className='flex-row '>
+          <NavLink  to="/" className='flex-row'>
+            <img src="img/logo.png" alt="logo"/>
+            <h1 className='flex-row'>Vidéodrôme</h1>
+          </NavLink>
+       </div>
+      <nav >
 
-      <nav>
         {context.estLog ? <NavLink to="/admin">Admin  </NavLink> :''}
         {/*{props.logged ? <NavLink to="/admin">Admin  </NavLink> :''} */}
 
         <NavLink to="/accueil">Accueil </NavLink> 
         <NavLink to="/liste-films">Films</NavLink> 
 
-        <form onSubmit={props.handleLogin}>
+     
+
+      </nav>
+      <form className='flex-row-end' onSubmit={props.handleLogin}>
           <input type="text" name="usager" id="login" placeholder='Login' />
          <button type="submit">Connexion</button>
         </form>
 
-      </nav>
+      </header>
 
   
     

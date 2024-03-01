@@ -1,7 +1,7 @@
 /* Variables de typographie */
 :root {
     --taille-base: 16px; /* Taille de base pour le texte */
-    --taille-titre-principal: 2.5rem; /* Taille pour h1 */
+    --taille-titre-principal: 3.5rem; /* Taille pour h1 */
     --taille-titre-secondaire: 2rem; /* Taille pour h2 */
     --taille-titre-tertiaire: 1.75rem; /* Taille pour h3 */
     --taille-titre-quaternaire: 1.5rem; /* Taille pour h4 */
@@ -28,7 +28,7 @@ body {
 
 h1 {
     font-size: var(--taille-titre-principal);
-    margin: 0.67em 0;
+ 
 }
 
 h2 { font-size: var(--taille-titre-secondaire); }
@@ -79,4 +79,8 @@ li {
 
 .large-text {
     font-size: 1.25rem;
+}
+
+.xl-text {
+    font-size: 1.5rem;
 }
