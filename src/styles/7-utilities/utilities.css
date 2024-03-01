@@ -49,4 +49,6 @@
 .cursor-pointer { cursor: pointer; }
 .opacity-50 { opacity: 0.5; }
 
+.interactive { cursor: pointer; }
+
 /* Ajoutez d'autres classes utilitaires selon vos besoins */

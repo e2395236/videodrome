@@ -9,8 +9,8 @@ function Filtres(props) {
   };
 
     return (
-        <ul>
-            <li className={filtreActif === "anneeAsc" ? "active" : ""} onClick={() => changerFiltre('data/annee-asc.json', 'anneeAsc')}> <button>Années - croissante (Année - Année)</button></li>
+        <ul >
+            <li className={filtreActif === "anneeAsc" ? "active" : ""}   onClick={() => changerFiltre('data/annee-asc.json', 'anneeAsc')}> <button>Années - croissante (Année - Année)</button></li>
             <li className={filtreActif === "anneeDesc" ? "active" : ""} onClick={() => changerFiltre('data/annee-desc.json', 'anneeDesc')}> <button>Années - décroissante (Année - Année)</button></li>
             <li className={filtreActif === "realAsc" ? "active" : ""} onClick={() => changerFiltre('data/realisation-asc.json', 'realAsc')}> <button>Réalisateurs - alphabétique (A - Z)</button></li>
             <li className={filtreActif === "realDesc" ? "active" : ""} onClick={() => changerFiltre('data/realisation-desc.json', 'realDesc')}> <button>Réalisateurs - alphabétique inverse (Z - A)</button></li>

@@ -38,3 +38,6 @@ img {
     color: inherit; /* Hérite de la couleur de texte parente */
   }
   
+  .dark {
+    color:#333;
+  }
