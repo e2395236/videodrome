@@ -12,6 +12,14 @@
  /* La police de caractères principale */
 }
 
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    src: url();
+}
+
+
 body {
     font-size: var(--taille-base);
     line-height: var(--hauteur-ligne);
@@ -37,9 +45,7 @@ a {
     color: var(--texte-principale);
     text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  
 }
 
 blockquote {

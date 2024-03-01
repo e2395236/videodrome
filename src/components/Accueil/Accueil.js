@@ -24,12 +24,12 @@ function Accueil() {
   return (
     <main>
 
-    <Entete />
+
    
   
     <div>
 
-      <p>{data}</p>
+      <p className='medium-text'>{data}</p>
      
   
     </div>

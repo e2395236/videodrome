@@ -48,7 +48,7 @@ function ListeFilms() {
   
   return (
     <main>
-      <Entete />
+ 
       <Filtres urlFiltre={urlFiltre} setUrlFiltre={setUrlFiltre} />
   
       <h2>Liste des films</h2>

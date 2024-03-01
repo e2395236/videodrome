@@ -3,7 +3,7 @@ import './Entete.css';
 
 
 
-function Entete() {
+function Entete(props) {
   return (
     
     <div>
@@ -11,10 +11,19 @@ function Entete() {
        <NavLink to="/"><h1>Videodrome</h1></NavLink>
       </header>
 
-  
-      <NavLink to="/accueil">Accueil </NavLink> 
+      <nav>
 
-       <NavLink to="/liste-films">Films</NavLink> 
+        <NavLink to="/accueil">Accueil </NavLink> 
+        <NavLink to="/liste-films">Films</NavLink> 
+
+        <form onSubmit={props.handleLogin}>
+          <input type="text" name="usager" id="login" placeholder='Login' />
+         <button type="submit">Connexion</button>
+        </form>
+
+      </nav>
+
+  
     
    
     

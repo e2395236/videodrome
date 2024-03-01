@@ -99,9 +99,8 @@ useEffect(() => {
 
   return (
     <div>
-      <Entete />
+   
   
-     
       <h2>{film && film.titre}</h2> 
 
             <h3>{film && film.realisation}</h3>
