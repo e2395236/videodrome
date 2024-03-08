@@ -27,7 +27,7 @@ function Accueil() {
     <Entete />
    
   
-    <div>
+    <div className="wrapper">
 
       <p>{data}</p>
      

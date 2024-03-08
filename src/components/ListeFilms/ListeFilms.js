@@ -9,7 +9,7 @@ import Filtres from '../Filtres/Filtres';
 function ListeFilms() {
 
 
- const urlListeFilms = "https://four1f-node-api.onrender.com/films";
+ const urlListeFilms = "https://api-films-dxmx.onrender.com/api/films";
  //const urlListeFilms = "data/titre-desc.json";
  const [urlFiltre, setUrlFiltre] = useState(urlListeFilms);
  const [listeFilms, setListeFilms] = useState([]);
@@ -32,11 +32,18 @@ function ListeFilms() {
 
   const tuileFilm = listeFilms.map((film) => {
     return (
-      <div className="grille-films" key={film.id}>
+   
+
+    
+        
+
+      <div className="film-card" key={film.id}>
         <Link to={`/films/${film.id}`}>
           <TuileFilm data={film} />
         </Link>
       </div>
+  
+    
     );
   });
   
@@ -47,18 +54,39 @@ function ListeFilms() {
 
   
   return (
-    <main>
-      <Entete />
+  <div>
+    <Entete />
+    <main className=''>
+
+   
+
+
+    <section>
+   
+
       <Filtres urlFiltre={urlFiltre} setUrlFiltre={setUrlFiltre} />
-  
-      <h2>Liste des films</h2>
+    
+
   
       <div className="container">
+
+        
+      
+
+   
+
+      <h2>Liste des films</h2>
+
         <div className="grille-films">
+            
+
+          
           {tuileFilm}
         </div>
       </div>
+      </section>
     </main>
+    </div>
   );
   }  
 

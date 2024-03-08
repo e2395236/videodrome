@@ -1,38 +1,13 @@
-import Entete from '../Entete/Entete';
+import React from 'react';
 import './404.css';
 
-
-function NotFound() {
-
- 
- 
-
- 
-  
-    return (
-      <main>
-      <Entete />
-     
-  
-      
-      <div>
-  
-     
-       
-  
-     
-   
-  
-  
-  
-  
-  
-   
-    
+function Page404() {
+  return (
+    <div>
+      <h1>404</h1>
+      <p>Page non trouvée</p>
     </div>
-  
-    </main>
-    );
-  }
-  
-  export default NotFound;
+  );
+}
+
+export default Page404;

@@ -1,0 +1,43 @@
+ul {
+    list-style: none; /* Enlève les puces */
+    padding: 0; /* Enlève le padding par défaut */
+    margin: 20px 0; /* Ajoute un peu d'espace autour de la liste */
+  }
+  
+  li {
+    margin: 10px 0; /* Espacement entre les éléments de la liste */
+  }
+  
+  li button {
+    background-color: #f0f0f0; /* Couleur de fond des boutons */
+    border: 1px solid #dcdcdc; /* Bordure des boutons */
+    padding: 10px 20px; /* Padding des boutons */
+    cursor: pointer; /* Curseur pointeur */
+    width: 100%; /* Les boutons prennent toute la largeur */
+    text-align: left; /* Texte aligné à gauche */
+  }
+  
+  li button:hover {
+    background-color: #e9e9e9; /* Couleur de fond au survol */
+  }
+  
+  li.active button {
+    background-color: #007bff; /* Couleur de fond pour l'élément actif */
+    color: white; /* Couleur du texte pour l'élément actif */
+    border-color: #007bff; /* Bordure pour l'élément actif */
+  }
+
+  .filtres {
+  margin-top:7.5rem;
+padding-right: 2rem;
+  position: fixed;
+  top: 30px;
+  left: 20px;
+
+
+
+
+ 
+
+
+  }

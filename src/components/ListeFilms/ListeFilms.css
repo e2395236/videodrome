@@ -1,5 +1,93 @@
 .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4px 0px 94px 131px;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: center;
     flex-wrap: wrap;
+    
+  
+  }
+  
+  .grille-films {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+    /* gap: 20px; */
 }
+  
+
+  
+  /* Pour les écrans plus petits, tu peux ajuster la base flex pour avoir moins de films par ligne */
+  @media (max-width: 768px) {
+    .grille-films div {
+      flex-basis: calc(50% - 20px); /* Deux films par ligne */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .grille-films div {
+      flex-basis: 100%; /* Un film par ligne */
+    }
+  }
+
+  .grille-films a {
+    text-decoration: none; /* Enlève le soulignement */
+    color: inherit; /* Prend la couleur du texte environnant */
+  }
+
+  h2 {
+    text-align: center;
+
+ 
+   
+    font-size: 2rem; /* Ajuste la taille selon tes préférences */
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+ 
+
+
+   
+  }
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+
+
+  
+
+  }
+
+
+  .film-card {
+
+    display: flex;
+  width: 200px ;
+  height: 300px;
+  background-color: #f5f5f5;
+ 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+  }

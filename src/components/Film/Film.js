@@ -1,125 +1,54 @@
 import { useParams } from 'react-router-dom';
-import Entete from '../Entete/Entete';
-import './Film.css';
 import { useState, useEffect } from 'react';
-import TuileFilm from '../TuileFilms/TuileFilm';
+import React from 'react';
 
+import Entete from '../Entete/Entete';
+import EtoilesVote from '../EtoilesVote/EtoilesVote';
+import './Film.css';
 
+function Film() {
+  const { id } = useParams();
+  const urlFilm = `https://api-films-dxmx.onrender.com/api/films/` + id;
+  const [film, setFilm] = useState({});
 
+  useEffect(() => {
+    fetch(urlFilm)
+      .then(response => response.json())
+      .then(data => {
+        setFilm(data);
+      });
+  }, [urlFilm]);
 
-function Film(props) {
-  let { id } = useParams();
-
-
-
-
- 
-  
-  // Récupère l'identifiant du film depuis l'URL
-
-  // Ici, tu peux utiliser l'identifiant pour charger les détails du film depuis ton API ou tes données
-const urlFilm = "https://four1f-node-api.onrender.com/films/" + id;
-const [film, setFilm] = useState({});
-
-useEffect(() => {
-  fetch(urlFilm)
-    .then(response => response.json())
-    .then(data => {
-      setFilm(data);
-    });
-}, []);
-
-
-
-
-// useEffect(() => {
-  
-//   fetch(urlFilm)
-//     .then(response => response.json())
-//     .then(data => {
-      
-//       setFilm(data);
-//       console.log(data.notes);  
-
-
-    
-//     })
-
-// }, []);
-
-
-
-  async function soumettreNote() {
-   // console.log('Soumettre note');
-
-   let aNotes;
-
-   if (!film.notes) {
-    aNotes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-   } else {
-    aNotes = film.notes;
-     film.notes.push(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-   }
-   //console.log(aNotes);
-     
-   
-
-    const oOptions = {
+  const soumettreVote = async (note) => {
+    const nouvellesNotes = film.notes ? [...film.notes, note] : [note];
+    const options = {
       method: 'PUT',
-      headers: {
-        
-        "Content-Type": "application/json",
-       // "Accept": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ notes: nouvellesNotes }),
+    };
 
-      body: JSON.stringify({notes: aNotes}),
-    
+    try {
+      await fetch(urlFilm, options);
+      const response = await fetch(urlFilm);
+      const updatedFilm = await response.json();
+      setFilm(updatedFilm);
+    } catch (error) {
+      console.error("Erreur lors de la soumission de la note", error);
     }
-
-    let putNote = await fetch(urlFilm, oOptions),
-        getFilm = await fetch(urlFilm);
-
-        Promise.all([putNote, getFilm])
-        .then(reponse => { reponse[1].json() })
-        .then(data => {
-          setFilm(data);
-          console.log(putNote);
-          console.log(getFilm);
-
-        });
-
-      }
-
-      
-  
-
-
-
+  };
 
   return (
     <div>
       <Entete />
-  
-     
-      <h2>{film && film.titre}</h2> 
-
-            <h3>{film && film.realisation}</h3>
-            {/* <img src={`img/${film.titreVignette}`} alt={film.titre}/> */}
-
-  
-     
-            <p>{film && film.annee}</p>
-            <p>{film && film.duree} minutes</p>
-            <p>{film && film.resume}</p>
-            <p>{film && film.notes}</p>
-            <p>{film && film.description}</p>
-            <p>{film && film.genres } </p> 
-         
-
-      <button onClick={soumettreNote}>Vote</button>
-
-     
+      <div className="film-container">
+        <h2 className="film-titre">{film.titre} <span className='large-text'>({film.annee})</span></h2> 
+        <img src={film.image} alt={film.titre} className="film-image"/> 
+        <p className="film-realisation">réalisé par : {film.realisateur}</p>
+        <p className="film-resume">{film.synopsis}</p>
+        <p className="film-genres">Genres: {film.genres && film.genres.length > 0 ? film.genres.join(', ') : 'Non spécifié'}</p>
+        <p className="film-acteurs">Acteurs: {film.acteurs && film.acteurs.length > 0 ? film.acteurs.join(', ') : 'Non spécifié'}</p>
+        {film.notes && <EtoilesVote notes={film.notes} onVote={soumettreVote} />}
+      </div>
     </div>
   );
 }

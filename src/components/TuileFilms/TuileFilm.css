@@ -3,21 +3,16 @@ img {
 
 }
 
-.grille-films {
-    display: flex;
-    flex-wrap: wrap;
-    gap:1.5rem; /* Met un peu d'espace entre les tuiles */
-   
-  }
+
   
   .tuile-film {
     flex: 0 1 300px; /* Les tuiles vont avoir une base de 300px mais peuvent grandir */
     display: flex;
     flex-direction: column;
     max-width: 210px;
-    align-items: center; /* Centre le contenu de la tuile */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Petite ombre pour du relief */
-    padding: 20px;
+    align-items: flex-start; /* Centre le contenu de la tuile */
+  
+    padding: 10px;
  /* Bordures arrondies pour le style */
     background-color: #fff; /* Un fond blanc ou une autre couleur de ton choix */
   }
@@ -38,3 +33,12 @@ img {
     color: inherit; /* Hérite de la couleur de texte parente */
   }
   
+
+  article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+}

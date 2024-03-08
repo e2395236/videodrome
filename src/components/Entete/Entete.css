@@ -1,0 +1,31 @@
+header {
+
+    padding: 20px; /* Espacement autour du contenu de l'entête */
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    justify-content: space-between; /* Espacement entre les éléments */
+
+
+  }
+  
+  nav {
+    display: flex; /* Utilise Flexbox dans la nav aussi */
+    gap: 20px; /* Espace entre les liens */
+    align-items: center;
+  }
+  
+  nav a {
+    color: #61dafb; /* Couleur des liens */
+    text-decoration: none; /* Enlève le soulignement des liens */
+    font-size: 18px; /* Taille de la police des liens */
+  }
+  
+  nav a:hover {
+    color: #ffffff; /* Couleur des liens au survol */
+  }
+  
+  h1 {
+    color: #ffffff; /* Couleur du titre */
+    margin: 0; /* Enlève la marge par défaut du h1 */
+  }
+  
