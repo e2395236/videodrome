@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import './ListeFilms.css';
 import TuileFilm from '../TuileFilms/TuileFilm';
-import Entete from '../Entete/Entete';
 import { useEffect, useState } from 'react';
 import Filtres from '../Filtres/Filtres';
 
@@ -9,7 +8,7 @@ import Filtres from '../Filtres/Filtres';
 function ListeFilms() {
 
 
- const urlListeFilms = "https://api-films-dxmx.onrender.com/api/films";
+ const urlListeFilms = "https://four1f-node-api.onrender.com/films";
  //const urlListeFilms = "data/titre-desc.json";
  const [urlFiltre, setUrlFiltre] = useState(urlListeFilms);
  const [listeFilms, setListeFilms] = useState([]);
@@ -32,20 +31,15 @@ function ListeFilms() {
 
   const tuileFilm = listeFilms.map((film) => {
     return (
-   
-
-    
-        
-
-      <div className="film-card" key={film.id}>
+      <div key={film.id} className="tuileFilm">
         <Link to={`/films/${film.id}`}>
           <TuileFilm data={film} />
         </Link>
       </div>
-  
-    
     );
   });
+  
+
   
   
   
@@ -54,39 +48,20 @@ function ListeFilms() {
 
   
   return (
-  <div>
-    <Entete />
-    <main className=''>
-
-   
-
-
-    <section>
-   
-
+    <main>
+          <aside>
       <Filtres urlFiltre={urlFiltre} setUrlFiltre={setUrlFiltre} />
-    
+      </aside>
 
-  
+      <section>
+
       <div className="container">
-
-        
-      
-
-   
-
-      <h2>Liste des films</h2>
-
-        <div className="grille-films">
-            
-
-          
           {tuileFilm}
         </div>
-      </div>
+ 
       </section>
     </main>
-    </div>
+
   );
   }  
 

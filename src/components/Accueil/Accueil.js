@@ -1,6 +1,6 @@
 
 import './Accueil.css';
-import Entete from '../Entete/Entete';
+
 import React from 'react';
 import data from './Accueil.json';
 
@@ -24,15 +24,21 @@ function Accueil() {
   return (
     <main>
 
-    <Entete />
-   
-  
-    <div className="wrapper">
+      <section className="accueil-section">
+      <p className='medium-text'>{data}</p>
+      <img src={`${process.env.PUBLIC_URL}/img/svg/lignes-accueil.svg`} alt="lignes" />
+      </section>
 
-      <p>{data}</p>
+
+
+<img src={`${process.env.PUBLIC_URL}/img/svg/group-8.svg`} alt="videodrome" />
+
+
+ 
+
+ 
      
-  
-    </div>
+
 
   </main>
   );

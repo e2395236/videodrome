@@ -1,64 +1,6 @@
-/* Variables de typographie */
-:root {
-    --taille-base: 16px; /* Taille de base pour le texte */
-    --taille-titre-principal: 2.5rem; /* Taille pour h1 */
-    --taille-titre-secondaire: 2rem; /* Taille pour h2 */
-    --taille-titre-tertiaire: 1.75rem; /* Taille pour h3 */
-    --taille-titre-quaternaire: 1.5rem; /* Taille pour h4 */
-    --taille-titre-quintenaire: 1.25rem; /* Taille pour h5 */
-    --taille-titre-sextenaire: 1rem; /* Taille pour h6 */
-    --hauteur-ligne: 1.6; /* Hauteur de ligne pour le corps du texte */
-    --fonte-principale: 'Helvetica Neue', Helvetica, Arial, sans-serif;
- /* La police de caractères principale */
-}
-
-body {
-    font-size: var(--taille-base);
-    line-height: var(--hauteur-ligne);
-    font-family: var(--fonte-principale);
-}
-
-h1 {
-    font-size: var(--taille-titre-principal);
-    margin: 0.67em 0;
-}
-
-h2 { font-size: var(--taille-titre-secondaire); }
-h3 { font-size: var(--taille-titre-tertiaire); }
-h4 { font-size: var(--taille-titre-quaternaire); }
-h5 { font-size: var(--taille-titre-quintenaire); }
-h6 { font-size: var(--taille-titre-sextenaire); }
-
-p {
-    margin: 1em 0;
-}
-
-a {
-    color: var(--texte-principale);
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-blockquote {
-    padding: 0.5em 10px;
-    margin: 0 0 20px;
-    border-left: 5px solid #eee;
-}
-
-ul, ol {
-    margin: 1em 0;
-    padding: 0 0 0 20px;
-}
-
-li {
-    margin: 0.25em 0;
-}
 
 /* Ajoutez ici d'autres styles typographiques spécifiques à votre projet */
-
+/* 
 .xs-text {
     font-size: 0.75rem;
 }
@@ -73,4 +15,4 @@ li {
 
 .large-text {
     font-size: 1.25rem;
-}
+} */

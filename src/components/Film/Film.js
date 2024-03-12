@@ -1,22 +1,24 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import React from 'react';
-
-import Entete from '../Entete/Entete';
 import EtoilesVote from '../EtoilesVote/EtoilesVote';
 import './Film.css';
 
-function Film() {
+function Film(){
   const { id } = useParams();
-  const urlFilm = `https://api-films-dxmx.onrender.com/api/films/` + id;
+  const urlFilm = `https://four1f-node-api.onrender.com/films/${id}`;
+
   const [film, setFilm] = useState({});
 
   useEffect(() => {
     fetch(urlFilm)
-      .then(response => response.json())
-      .then(data => {
-        setFilm(data);
-      });
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+    .then(data => {
+      setFilm(data);
+    })
+    .catch(error => console.error('Erreur lors de la récupération des données:', error));
   }, [urlFilm]);
 
   const soumettreVote = async (note) => {
@@ -38,19 +40,48 @@ function Film() {
   };
 
   return (
-    <div>
-      <Entete />
-      <div className="film-container">
-        <h2 className="film-titre">{film.titre} <span className='large-text'>({film.annee})</span></h2> 
-        <img src={film.image} alt={film.titre} className="film-image"/> 
-        <p className="film-realisation">réalisé par : {film.realisateur}</p>
-        <p className="film-resume">{film.synopsis}</p>
-        <p className="film-genres">Genres: {film.genres && film.genres.length > 0 ? film.genres.join(', ') : 'Non spécifié'}</p>
-        <p className="film-acteurs">Acteurs: {film.acteurs && film.acteurs.length > 0 ? film.acteurs.join(', ') : 'Non spécifié'}</p>
-        {film.notes && <EtoilesVote notes={film.notes} onVote={soumettreVote} />}
-      </div>
-    </div>
+    <main>
+      <section className="film-section">
+        <div className="poster-container">
+          <img src={`${process.env.PUBLIC_URL}/img/${film.titreVignette}`} alt={film.titre} className="poster" width="400px" title={film.titre}  />
+
+
+        </div>
+
+        <div className="info-container">
+          <div className="card">
+            <div className="card-header">
+              <h1>{film.titre}</h1>
+              <img src={`${process.env.PUBLIC_URL}/img/svg/lignes.svg`} alt="lignes" />
+              <h2>{film.annee}</h2>
+            </div>
+
+            <div className="card-body">
+            <p>réalisé par <strong>{film.realisation}</strong></p>
+
+              <p>{film.genres && film.genres.join(', ')}</p>
+              <p>{film.acteurs && film.acteurs.join(', ')}</p>
+              <p>Durée : {film.duree} minutes</p>
+              <p>{film.description}</p>
+            </div>
+
+            <div className="votes">
+             {film.notes && <EtoilesVote notes={film.notes} onVote={soumettreVote} />} 
+              {/* Ici, tu dois intégrer le composant EtoilesVote avec les données du film */}
+         
+            </div>
+
+            <div className="card-footer">
+            <img src={`${process.env.PUBLIC_URL}/img/svg/rectangle.svg`} alt="rectangle" />
+            </div>
+          </div>
+        </div>
+
+        
+      </section>
+    </main>
   );
 }
 
 export default Film;
+

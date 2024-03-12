@@ -1,93 +1,261 @@
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 4px 0px 94px 131px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: center;
-    flex-wrap: wrap;
-    
-  
-  }
-  
-  .grille-films {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0px 0px 0px 0px;
-    /* gap: 20px; */
-}
-  
-
-  
-  /* Pour les écrans plus petits, tu peux ajuster la base flex pour avoir moins de films par ligne */
-  @media (max-width: 768px) {
-    .grille-films div {
-      flex-basis: calc(50% - 20px); /* Deux films par ligne */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .grille-films div {
-      flex-basis: 100%; /* Un film par ligne */
-    }
-  }
-
-  .grille-films a {
-    text-decoration: none; /* Enlève le soulignement */
-    color: inherit; /* Prend la couleur du texte environnant */
-  }
-
-  h2 {
-    text-align: center;
-
- 
-   
-    font-size: 2rem; /* Ajuste la taille selon tes préférences */
-  }
-
-  aside {
-    display: flex;
-    flex-direction: column;
- 
-
-
-   
-  }
-
 section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+  /* border: 2px solid white; */
+  padding: 1rem;
+  margin: 1rem;
+  /* height: 70vh; */
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.tuileFilm {
+  flex: 1;
+  min-width: calc(25% - 2rem); /* Pour une grille de 4 éléments par ligne */
+  max-width: calc(25% - 2rem); /* Même que min-width pour garder la consistance */
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles supplémentaires pour garantir que le contenu des tuiles ne déborde pas */
+.tuileFilm img {
+  width: 100%; /* Assure que l'image prend toute la largeur de la tuile */
+  height: auto; /* Garde le ratio de l'image */
+  display: block; /* Évite les marges indésirables sous les images */
+}
+
+/* .tuileFilm .film-info {
+  padding: 0.5rem;
+
+} */
+
+.tuileFilm .film-titre {
+  font-size: 1rem; /* Taille initiale de la police */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Tu peux également ajouter une classe pour les titres et y inclure cette règle */
+.tuileFilm .film-titre.long-titre {
+  white-space: normal;
+  font-size: 0.9rem; /* Taille de police réduite pour les titres longs */
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centre les éléments horizontalement */
+  align-items: stretch; /* Étire les éléments verticalement pour qu'ils aient la même hauteur */
+  gap: 1rem; /* Espacement entre les éléments */
+  margin: -1rem; /* Compense pour le gap sur l'extérieur du container */
+}
+
+article {
+  /* border: 1px solid white; */
+  padding: 1rem;
+  margin: 1rem;
+  color: white;
+  font-family: 'Roboto';
 
 
+}
 
+aside {
+   /* border: 1px solid white;  */
+  padding: 1rem;
+margin-top: 6rem;
+  display: flex;
+  width: 10%;
+  flex-direction: column;
+  color: white;
+  /* font-family: 'Berthold'; */
+  letter-spacing: 1pt;
+
+}
+
+main {
+  /* border: 1px solid white; */
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* align-content: space-around; */
+  align-items: stretch;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: -1rem;
+}
 
-  }
+
+.interactif {
+  cursor: pointer;
+}
 
 
-  .film-card {
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem; /* Déplace le padding ici pour une transition fluide */
+  border: 1px solid transparent; /* Bordure transparente par défaut */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Transition pour couleur et bordure */
+}
 
-    display: flex;
-  width: 200px ;
-  height: 300px;
-  background-color: #f5f5f5;
- 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: flex-start;
-  }
+nav ul li a:hover {
+  color: rgb(208, 55, 0);
+  border: 2px solid rgb(255, 255, 255);
+}
+
+
+nav ul li :active {
+  color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  border: 1px solid rgb(255, 255, 255);
+
+
+}
+
+a {
+  text-decoration: none;
+}
+
+
+article div {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+article div h2 {
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+.annee {
+  font-style: italic;
+  font-size: small;
+}
+
+
+
+/* Style de base pour la nouvelle classe */
+.film-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation douce */
+  cursor: pointer; /* Change le curseur pour indiquer l'interactivité */
+}
+
+.film-hover:hover {
+  transform: scale(1.05); /* Légère augmentation de la taille */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet de soulèvement */
+}
+
+.film-hover svg path {
+  transition: stroke 0.3s ease; /* Animation douce pour la couleur du cadre */
+}
+
+.film-hover:hover svg path {
+  stroke: #FF6347; /* Change la couleur du cadre au survol */
+}
+
+.film-hover div h2, .film-hover div h3 {
+  transition: color 0.3s ease; /* Animation douce pour la couleur du texte */
+}
+
+.film-hover:hover div h2, .film-hover:hover div h3 {
+  color: #FF6347; /* Change la couleur du texte au survol */
+}
+
+.menu-filtres {
+  list-style-type: none;
+  padding: 0;
+  cursor: pointer;
+
+}
+
+.menu-filtres .menu-item > .sous-menu {
+  list-style-type: none;
+  padding-left: 20px;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out; /* Transition douce pour les sous-menus */
+}
+
+.menu-item:hover > .sous-menu {
+  opacity: 1;
+  visibility: visible;
+  max-height: 500px; /* Assure-toi que la max-height est suffisante pour montrer tout le contenu du sous-menu */
+}
+
+.menu-item {
+  padding: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+.multi-line-link {
+  position: relative;
+  text-decoration: none; /* On enlève le underline par défaut */
+}
+
+.multi-line-link::before,
+.multi-line-link::after,
+.multi-line-link span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  transition: height 0.3s ease, opacity 0.3s ease; /* Ajoute l'opacité à la transition */
+}
+
+.multi-line-link::before {
+  top: 20px; /* Position de la première ligne */
+  border-bottom: 3px solid #ff4500; /* Épaisseur de la première ligne */
+}
+
+.multi-line-link::after {
+  top: 25px; /* Position de la seconde ligne, légèrement en dessous de la première */
+  border-bottom: 2px solid #ff4500; /* Épaisseur de la seconde ligne */
+}
+
+.multi-line-link span::after {
+  top: 30px; /* Position de la troisième ligne, encore en dessous */
+  border-bottom: 1px solid #ff4500; /* Épaisseur de la troisième ligne, la plus fine */
+}
+
+.multi-line-link:hover::before,
+.multi-line-link:hover::after,
+.multi-line-link:hover span::after {
+  height: 1px;
+  opacity: 1; /* Les lignes deviennent visibles */
+}
+
+
+

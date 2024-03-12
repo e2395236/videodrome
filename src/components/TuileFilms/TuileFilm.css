@@ -1,44 +1,99 @@
-img {
-    max-width: 200px;
 
+
+
+
+
+a {
+    color: white;
 }
 
 
-  
-  .tuile-film {
-    flex: 0 1 300px; /* Les tuiles vont avoir une base de 300px mais peuvent grandir */
-    display: flex;
-    flex-direction: column;
-    max-width: 210px;
-    align-items: flex-start; /* Centre le contenu de la tuile */
-  
-    padding: 10px;
- /* Bordures arrondies pour le style */
-    background-color: #fff; /* Un fond blanc ou une autre couleur de ton choix */
-  }
-  
-  .tuile-film img {
-    width: 100%; /* Pour que l'image prenne toute la largeur de la tuile */
- /* Bordures arrondies pour l'image aussi */
-   ; /* Un peu d'espace entre l'image et le texte en dessous */
-  }
-  
-  .tuile-film h2 {
-    font-size: 20px; /* Taille du titre */
-    color: #333; /* Couleur du texte */
-    margin: 0 0 10px 0; /* Ajuste l'espacement autour du titre */
-  }
-  .grille-films a {
-    text-decoration: none; /* Enlève le soulignement */
-    color: inherit; /* Hérite de la couleur de texte parente */
-  }
-  
 
-  article {
+
+
+
+
+
+article {
+    /* border: 1px solid white; */
+    padding: 1rem;
+    margin: 1rem;
+    color: white;
+    font-family: 'Roboto';
+  
+ 
+}
+
+
+
+
+
+
+
+.interactif {
+    cursor: pointer;
+}
+
+
+
+
+a {
+    text-decoration: none;
+}
+
+
+article div {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    gap: 1rem;
+    align-content: space-between;
+    justify-content: flex-start;
+    align-items: baseline;
     flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: center;
 }
+
+article div h3 {
+  font-style: italic;
+    font-size: smaller;
+}
+
+
+/* Style de base pour la nouvelle classe */
+.film-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation douce */
+    cursor: pointer; /* Change le curseur pour indiquer l'interactivité */
+}
+
+.film-hover:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet de soulèvement */
+}
+
+.film-hover svg path {
+    transition: stroke 0.3s ease; /* Animation douce pour la couleur du cadre */
+}
+
+.film-hover:hover svg path {
+    stroke: #FF6347; /* Change la couleur du cadre au survol */
+}
+
+.film-hover div h2, .film-hover div h3 {
+    transition: color 0.3s ease; /* Animation douce pour la couleur du texte */
+}
+
+.film-hover:hover div h2, .film-hover:hover div h3 {
+    color: #FF6347; /* Change la couleur du texte au survol */
+}
+
+
+
+
+
+
+
+
+
+
+  
+  
+  

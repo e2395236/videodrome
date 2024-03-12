@@ -18,5 +18,39 @@
 @import url(./styles/7-utilities/utilities.css);
 
 
+@font-face {
+    font-family: "Klein";
+    src: url('./fonts/Klein-Condensed-ExtraBold-Italic-trial.ttf') format('truetype');
 
+  }
+  
+  @font-face {
+    font-family: "Klein bold";
+    src: url( './fonts/Klein-Condensed-ExtraBold-trial.ttf') format('truetype');    
+  }
+  
+  @font-face {
+    font-family: 'Anonymous';
+    src: url( './fonts/AnonymousPro-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    src: url( './fonts/Inter-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter bold';
+    src: url('./fonts/Inter-Bold.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Berthold';
+    src: url( './fonts/berthold-akzidenz-grotesk-be-bold-extended.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Roboto';
+    src: url( './fonts/Roboto-Regular.ttf');
+  }
+  
 
