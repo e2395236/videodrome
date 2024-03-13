@@ -40,10 +40,10 @@
   text-overflow: ellipsis;
 }
 
-/* Tu peux également ajouter une classe pour les titres et y inclure cette règle */
+
 .tuileFilm .film-titre.long-titre {
   white-space: normal;
-  font-size: 0.9rem; /* Taille de police réduite pour les titres longs */
+  font-size: 0.9rem; 
 }
 .container {
   display: flex;
@@ -52,8 +52,7 @@
   justify-content: flex-start;
   align-items: stretch;
   gap: 1rem;
-  /* max-width: max-content; */
-  /* min-width: 400px; */
+
 
 
 }
@@ -77,7 +76,7 @@ margin-top: 6rem;
   width: 10%;
   flex-direction: column;
   color: white;
-  /* font-family: 'Berthold'; */
+
   letter-spacing: 1pt;
 
 }
@@ -89,7 +88,6 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    /* align-content: space-around; */
     align-items: stretch;
 }
 
@@ -135,31 +133,31 @@ article div h2 {
 
 
 
-/* Style de base pour la nouvelle classe */
+
 .film-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation douce */
-  cursor: pointer; /* Change le curseur pour indiquer l'interactivité */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  cursor: pointer; 
 }
 
 .film-hover:hover {
-  transform: scale(1.05); /* Légère augmentation de la taille */
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet de soulèvement */
+  transform: scale(1.05); 
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); 
 }
 
 .film-hover svg path {
-  transition: stroke 0.3s ease; /* Animation douce pour la couleur du cadre */
+  transition: stroke 0.3s ease; 
 }
 
 .film-hover:hover svg path {
-  stroke: #FF6347; /* Change la couleur du cadre au survol */
+  stroke: #FF6347; 
 }
 
 .film-hover div h2, .film-hover div h3 {
-  transition: color 0.3s ease; /* Animation douce pour la couleur du texte */
+  transition: color 0.3s ease; 
 }
 
 .film-hover:hover div h2, .film-hover:hover div h3 {
-  color: #FF6347; /* Change la couleur du texte au survol */
+  color: #FF6347; 
 }
 
 .menu-filtres {
@@ -176,13 +174,14 @@ article div h2 {
   visibility: hidden;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s ease-in-out; /* Transition douce pour les sous-menus */
+
+  transition: all 0.3s ease-in-out; 
 }
 
 .menu-item:hover > .sous-menu {
   opacity: 1;
   visibility: visible;
-  max-height: 500px; /* Assure-toi que la max-height est suffisante pour montrer tout le contenu du sous-menu */
+  max-height: 500px; 
 }
 
 .menu-item {
@@ -201,19 +200,6 @@ article div h2 {
   transform: translateY(0) scale(1) rotate(0deg);
 }
 
-/* .tuileFilm {
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  transition-delay: 0s; /* délai initial 
-}
-
-/* Ajoute cette règle pour gérer le délai de transition de chaque tuile 
-.tuileFilm:nth-child(odd) {
-  transition-delay: 0.1s;
-}
-
-.tuileFilm:nth-child(even) {
-  transition-delay: 0.2s;
-} */
 
 
 
