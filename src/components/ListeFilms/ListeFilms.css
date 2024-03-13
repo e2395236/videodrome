@@ -1,16 +1,17 @@
-section {
-  /* border: 2px solid white; */
+.liste-films {
+
   padding: 1rem;
   margin: 1rem;
   /* height: 70vh; */
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
+ flex-basis: 70%; 
   justify-content: space-between;
   align-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
 }
+
 .tuileFilm {
   flex: 1;
   min-width: calc(25% - 2rem); /* Pour une grille de 4 éléments par ligne */
@@ -47,14 +48,18 @@ section {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centre les éléments horizontalement */
-  align-items: stretch; /* Étire les éléments verticalement pour qu'ils aient la même hauteur */
-  gap: 1rem; /* Espacement entre les éléments */
-  margin: -1rem; /* Compense pour le gap sur l'extérieur du container */
+  padding-left:10rem ;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1rem;
+  /* max-width: max-content; */
+  /* min-width: 400px; */
+
+
 }
 
 article {
-  /* border: 1px solid white; */
+
   padding: 1rem;
   margin: 1rem;
   color: white;
@@ -63,8 +68,9 @@ article {
 
 }
 
+
 aside {
-   /* border: 1px solid white;  */
+
   padding: 1rem;
 margin-top: 6rem;
   display: flex;
@@ -77,14 +83,14 @@ margin-top: 6rem;
 }
 
 main {
-  /* border: 1px solid white; */
+ 
   padding: 1rem;
-  margin: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  /* align-content: space-around; */
-  align-items: stretch;
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* align-content: space-around; */
+    align-items: stretch;
 }
 
 ul {
@@ -93,13 +99,6 @@ ul {
   margin: 0;
   
 }
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: -1rem;
-}
 
 
 .interactif {
@@ -107,27 +106,7 @@ ul {
 }
 
 
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 0.5rem; /* Déplace le padding ici pour une transition fluide */
-  border: 1px solid transparent; /* Bordure transparente par défaut */
-  transition: color 0.3s ease, border-color 0.3s ease; /* Transition pour couleur et bordure */
-}
 
-nav ul li a:hover {
-  color: rgb(208, 55, 0);
-  border: 2px solid rgb(255, 255, 255);
-}
-
-
-nav ul li :active {
-  color: rgb(255, 255, 255);
-  padding: 0.5rem;
-  border: 1px solid rgb(255, 255, 255);
-
-
-}
 
 a {
   text-decoration: none;
@@ -211,6 +190,30 @@ article div h2 {
 }
 
 
+.tuileFilm {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95) rotate(-2deg);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.tuileFilm.loaded {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(0deg);
+}
+
+/* .tuileFilm {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition-delay: 0s; /* délai initial 
+}
+
+/* Ajoute cette règle pour gérer le délai de transition de chaque tuile 
+.tuileFilm:nth-child(odd) {
+  transition-delay: 0.1s;
+}
+
+.tuileFilm:nth-child(even) {
+  transition-delay: 0.2s;
+} */
 
 
 

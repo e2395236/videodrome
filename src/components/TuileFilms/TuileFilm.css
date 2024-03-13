@@ -85,9 +85,24 @@ article div h3 {
     color: #FF6347; /* Change la couleur du texte au survol */
 }
 
+.tuileFilm {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition-delay: 0s; /* délai initial */
+  }
+  
+  /* Ajoute cette règle pour gérer le délai de transition de chaque tuile */
+  .tuileFilm:nth-child(odd) {
+    transition-delay: 0.1s;
+  }
+  
+  .tuileFilm:nth-child(even) {
+    transition-delay: 0.2s;
+  }
 
-
-
+  .info-supplementaire { 
+    font-size: small;
+    font-style: italic;
+  }
 
 
 

@@ -43,6 +43,17 @@
   justify-content: space-between;
  
 }
+.poster-container, .info-container {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95) rotate(-10deg);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.loaded {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(0deg);
+}
+
 
 
 
@@ -64,6 +75,7 @@
   color: white;
 
 }
+
 
 
 
@@ -100,11 +112,13 @@
 
 .film-section {
   display: flex;
+  width: 100%;
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   gap: 2rem;
+  margin-top: 5rem;
 
 }
 
