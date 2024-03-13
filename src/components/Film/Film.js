@@ -16,7 +16,7 @@ function Film(){
       .then(response => response.json())
       .then(data => {
         setFilm(data);
-        setLoaded(true); // Définir à true une fois que les données sont chargées
+        setLoaded(true); 
       })
       .catch(error => console.error('Erreur lors de la récupération des données:', error));
   }, [urlFilm]);
@@ -51,8 +51,7 @@ function Film(){
   className="poster"
   width="400px"
   title={film.titre}
-  onLoad={() => setLoaded(true)} // Ajoute ceci
-/>
+  onLoad={() => setLoaded(true)}/>
 
 
         </div>
