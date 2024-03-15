@@ -113,7 +113,7 @@
 .film-section {
   display: flex;
   width: 100%;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
@@ -123,7 +123,15 @@
 }
 
 
-
+.main {
+ 
+  padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
 
 
   

@@ -2,10 +2,13 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import EtoilesVote from '../EtoilesVote/EtoilesVote';
 import './Film.css';
+import Commentaires from '../Commentaires/Commentaires';
 
-function Film(){
+
+function Film({ estLog, handleLogin, handleLogout }) {
   const { id } = useParams();
   const urlFilm = `https://four1f-node-api.onrender.com/films/${id}`;
+
 
   const [film, setFilm] = useState({});
 
@@ -21,7 +24,7 @@ function Film(){
       .catch(error => console.error('Erreur lors de la récupération des données:', error));
   }, [urlFilm]);
 
-
+ 
 
   const soumettreVote = async (note) => {
     const nouvellesNotes = film.notes ? [...film.notes, note] : [note];
@@ -85,8 +88,21 @@ function Film(){
           </div>
         </div>
 
+   
+
+    
+       
+
+
+        
         
       </section>
+
+      <section className="commentaires-section">
+      <Commentaires estLog={estLog} film={{ id: id, ...film }} />
+      </section>
+
+
     </main>
   );
 }

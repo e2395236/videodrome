@@ -9,7 +9,7 @@ function Entete(props) {
       props.handleLogout();
       localStorage.removeItem('estLog');
     } else {
-      // Passez juste la chaîne "admin" à la fonction login
+    
       props.handleLogin("admin");
     }
   };

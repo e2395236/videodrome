@@ -14,8 +14,8 @@
 
 .tuileFilm {
   flex: 1;
-  min-width: calc(25% - 2rem); /* Pour une grille de 4 éléments par ligne */
-  max-width: calc(25% - 2rem); /* Même que min-width pour garder la consistance */
+  min-width: calc(25% - 2rem); 
+  max-width: calc(25% - 2rem); 
 
   display: flex;
   flex-direction: column;
@@ -81,7 +81,7 @@ margin-top: 6rem;
 
 }
 
-main {
+.main-liste-films {
  
   padding: 1rem;
     margin: 1rem;

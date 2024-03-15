@@ -56,7 +56,7 @@ const tuileFilm = listeFilms.map((film) => (
 
 
 return (
-  <main>
+  <main className='main-liste-films'>
     <aside>
       <Filtres setUrlFiltre={setUrlFiltre} setFiltreActif={setFiltreActif} />
     </aside>

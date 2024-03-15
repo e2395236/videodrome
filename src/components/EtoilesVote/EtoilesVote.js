@@ -14,8 +14,8 @@ function EtoilesVote({ notes, onVote }) {
       : 'Aucun vote enregistré';
 
   const handleVote = (ratingValue) => {
-      onVote(ratingValue); // Appelle onVote pour envoyer le vote
-      setVote(ratingValue); // Met à jour le vote
+      onVote(ratingValue); 
+      setVote(ratingValue); 
   };
 
   return (
