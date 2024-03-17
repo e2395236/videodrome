@@ -1,11 +1,12 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import ListeFilms from './ListeFilms';
 
-// Simuler une réponse de l'API avec deux films
+
 const mockFilms = [
   {
+    id: '1',
     titre: 'Alien - Le 8ème passager',
     genres: ['Horreur', 'Science-fiction'],
     description: 'Un vaisseau spatial perçoit une transmission non-identifiée...',
@@ -18,22 +19,32 @@ const mockFilms = [
 
 ];
 
-describe('Composant ListeFilms', () => {
-  test('Vérifie si les clés sont présentes dans la réponse pour tous les films', async () => {
-    
-    render(<ListeFilms films={mockFilms} />); // Adaptation nécessaire selon votre implémentation
-
-    // Attendre que les éléments soient présents pour éviter les erreurs liées au chargement asynchrone
-    await waitFor(() => {
-      mockFilms.forEach((film) => {
-        expect(screen.getByText(film.titre)).toBeInTheDocument();
-        expect(screen.getByText(film.genres.join(', '))).toBeInTheDocument();
-        expect(screen.getByText(film.description)).toBeInTheDocument();
-        expect(screen.getByText(String(film.annee))).toBeInTheDocument();
-      });
-    });
-  });
-
+beforeEach(() => {
+  global.fetch = jest.fn(() =>
+    Promise.resolve({
+      json: () => Promise.resolve(mockFilms),
+    })
+  );
 });
+
+afterEach(() => {
+  jest.restoreAllMocks();
+});
+
+describe('Composant ListeFilms', () => {
+  test('affiche les films après chargement des données', async () => {
+    render(<ListeFilms />);
+
+    for (const film of mockFilms) {
+      await screen.findByText(film.titre);
+      expect(screen.getByText(film.titre)).toBeInTheDocument();
+      expect(screen.getByText(film.genres.join(', '))).toBeInTheDocument();
+      expect(screen.getByText(film.description)).toBeInTheDocument();
+      expect(screen.getByText(film.realisation)).toBeInTheDocument();
+      expect(screen.getByText(String(film.annee))).toBeInTheDocument();
+    }
+  });
+});
+
 
 

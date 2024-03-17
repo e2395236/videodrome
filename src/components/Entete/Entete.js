@@ -1,46 +1,36 @@
+import React, { useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../App/App';
 import './Entete.css';
- 
-function Entete(props) {
 
+const Entete = () => {
+    const { estLog, login, logout } = useAuth();
 
-  const handleAuthAction = () => {
-    if (props.estLog) {
-      props.handleLogout();
-      localStorage.removeItem('estLog');
-    } else {
-    
-      props.handleLogin("admin");
-    }
-  };
+    const handleAuthOption = useCallback(() => estLog ? logout() : login("admin"), [estLog, logout, login]);
 
-  return (
-    <header>
-      <nav>
-        <NavLink to="/accueil">
-          <img src={`${process.env.PUBLIC_URL}/img/svg/logo.svg`} alt="logo" title="logo" />
-        </NavLink>
-        <ul>
-          <li><NavLink to="/liste-films">FILMS</NavLink></li>
-          <li><NavLink to="/series">SÉRIES</NavLink></li>
-        </ul>
-        </nav>
-        {props.estLog && (   <span>Bonjour, Admin !</span> ) }
-      <div>
-  
-       
-          {props.estLog && (   <NavLink to="/admin" className="multi-line-link"><span></span>admin</NavLink> ) }
+    const authOptions = estLog ? "Déconnexion" : "Connexion";
+    const authText = estLog ? "Bonjour, Admin !" : null;
 
-          
-       
-        <button onClick={handleAuthAction} className="multi-line-link">
-          <span></span>{props.estLog ? "déconnexion" : "connexion"}
-        </button>
-      </div>
+    return (
+        <header>
+            <nav>
+                <NavLink to="/accueil">
+                    <img src={`${process.env.PUBLIC_URL}/img/svg/logo.svg`} alt="logo" title="logo" />
+                </NavLink>
+                <ul>
+                    <li><NavLink to="/liste-films">Films</NavLink></li>
+                    {estLog && <li><NavLink to="/admin">Admin</NavLink></li>}
+                </ul>
+            </nav>
+            <div>
+                {authText && <span>{authText}</span>}
+                <button onClick={handleAuthOption} className="multi-line-link">{authOptions}</button>
+            </div>
+        </header>
+    );
+}
 
-      
-    </header>
-  );
-        }
 export default Entete;
+
+
 

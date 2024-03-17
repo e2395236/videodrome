@@ -1,13 +1,4 @@
 :root {
-    /* Couleurs primaires */
-    /*--couleur-principale: #007bff; /* Bleu */
-   /* --couleur-secondaire: #6c757d; /* Gris */
-
-    /* Couleurs d'état */
-    --couleur-succes: #28a745; /* Vert */
-    --couleur-info: #17a2b8; /* Cyan */
-    --couleur-avertissement: #ffc107; /* Jaune */
-    --couleur-danger: #dc3545; /* Rouge */
 
     /* Couleurs de fond */
     --fond-principal: #0e1011; /* Blanc */
@@ -33,24 +24,6 @@
 
 
 
-
-/* Utilisation des variables */
-body {
-    background-color: var(--fond-principal);
-    color: var(--texte-principal);
-}
-
-.bouton-principal {
-    background-color: var(--couleur-principale);
-    color: var(--fond-principal);
-}
-
-.bouton-avertissement {
-    background-color: var(--couleur-avertissement);
-    color: var(--fond-principal);
-}
-
-/* Ajoutez d'autres sélecteurs et propriétés ici, en utilisant les variables définies */
 
 
 
